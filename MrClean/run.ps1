@@ -23,7 +23,6 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
     StatusCode = [HttpStatusCode]::OK
     Body = $body
 })
- Import-Module Az
 ## Funtion for removing containers, needs to be put ahead of the other
 Function DeleteStorageContainer  
 {  
