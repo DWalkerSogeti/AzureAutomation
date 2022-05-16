@@ -17,7 +17,7 @@ Connect-AzAccount -Subscription $subscription_id -Tenant $tenant_id -Identity
 $global:subscription = Get-AzSubscription -SubscriptionId $subscription_id -Tenant $tenant_id
 Set-AzContext -SubscriptionId $subscription_id
 Write-Host "Logged on to environment: "$subscription.Name -ForegroundColor "Cyan"
-$Context = New-AzStorageContext $StorageAccountName -StorageAccountKey "Lln8pswcwoZaMW8imspM+gDIK57X8QXKKa2mVziyZ1+lzdXxzpiFIqeenTUWE0yPYeEhXRTnkTde+ASteE+PWg=="
+$env:Context = New-AzStorageContext $StorageAccountName -StorageAccountKey "Lln8pswcwoZaMW8imspM+gDIK57X8QXKKa2mVziyZ1+lzdXxzpiFIqeenTUWE0yPYeEhXRTnkTde+ASteE+PWg=="
 
 # Authenticate with Azure PowerShell using MSI.
 # Remove this if you are not planning on using MSI or Azure PowerShell.
