@@ -12,10 +12,8 @@ $global:subscription_id = "bbc94ccb-1e55-4b95-878c-c174172073f5"
 $global:tenant_id = "939f4a83-33ed-4845-a346-516f14ad6321"
 $global:StorageAccountName = "scratchareastorage"
 #Login:
-Import-Module Az.Functions
-Import-Module Az.Resources
-Import-Module Az.Storage
-Connect-AzAccount -Subscription $subscription_id -Tenant $tenant_id
+Import-Module Az
+Connect-AzAccount -Subscription $subscription_id -Tenant $tenant_id -Identity
 $global:subscription = Get-AzSubscription -SubscriptionId $subscription_id -Tenant $tenant_id
 Set-AzContext -SubscriptionId $subscription_id
 Write-Host "Logged on to environment: "$subscription.Name -ForegroundColor "Cyan"
