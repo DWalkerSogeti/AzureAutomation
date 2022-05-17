@@ -8,7 +8,7 @@
 #
 # You can define helper functions, run commands, or specify environment variables
 # NOTE: any variables defined that are not environment variables will get reset after the first execution
-$global:StorageAccountName = $env:StorageAccountName
+
 #Login:
 Import-Module Az.Accounts
 Import-Module Az.Storage
