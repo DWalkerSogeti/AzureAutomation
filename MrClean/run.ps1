@@ -23,6 +23,9 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
     StatusCode = [HttpStatusCode]::OK
     Body = $body
 })
+
+$global:Context = New-AzStorageContext $StorageAccountName -StorageAccountKey "Lln8pswcwoZaMW8imspM+gDIK57X8QXKKa2mVziyZ1+lzdXxzpiFIqeenTUWE0yPYeEhXRTnkTde+ASteE+PWg=="
+
 ## Funtion for removing containers, needs to be put ahead of the other
 Function DeleteStorageContainer  
 {  
