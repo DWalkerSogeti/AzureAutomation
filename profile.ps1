@@ -11,10 +11,10 @@
 $global:StorageAccountName = $env:StorageAccountName
 #Login:
 Import-Module Az.Accounts
-Import-Module Az.StorageContainer
+Import-Module Az.Storage
 Connect-AzAccount -Identity
 Write-Host "Logged on to environment: "$subscription.Name -ForegroundColor "Cyan"
-$global:Context = New-AzStorageContext $StorageAccountName -StorageAccountKey "Lln8pswcwoZaMW8imspM+gDIK57X8QXKKa2mVziyZ1+lzdXxzpiFIqeenTUWE0yPYeEhXRTnkTde+ASteE+PWg=="
+
 # Authenticate with Azure PowerShell using MSI.
 # Remove this if you are not planning on using MSI or Azure PowerShell.
 if ($env:MSI_SECRET) {
