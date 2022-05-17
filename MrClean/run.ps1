@@ -1,9 +1,5 @@
 using namespace System.Net
 
-## Variables
-$StorageAccountName = $env:StorageAccountName
-$StorageResourceGroupName = $env:StorageResourceGroupName
-
 # Input bindings are passed in via param block.
 param($Request, $TriggerMetadata)
 
@@ -28,6 +24,9 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
     Body = $body
 })
 
+## Variables
+$StorageAccountName = $env:StorageAccountName
+$StorageResourceGroupName = $env:StorageResourceGroupName
 $StorageAccount = Get-AzStorageAccount -Name $StorageAccountName -ResourceGroupName $StorageResourceGroupName
 
 ## Funtion for removing containers, needs to be put ahead of the other
